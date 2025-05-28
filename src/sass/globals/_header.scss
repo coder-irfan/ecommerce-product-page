@@ -1,0 +1,222 @@
+.nav {
+
+    @include breakpoint('md') {
+        border-bottom: rem(2) solid $light-grayish-blue;
+        padding-bottom: rem(31);
+    }
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: rem(20);
+
+        @include breakpoint('md') {
+            align-items: center;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: rem(16);
+
+        @include breakpoint('md') {
+            align-items: center;
+            gap: rem(0);
+        }   
+    }
+
+    &__menu-logo {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        gap: rem(30);
+
+        @include breakpoint('md') {
+            gap: 0;
+        }
+    }
+
+    &__close, &__menu {
+        position: absolute;
+        top: rem(23);
+        left: rem(25);
+        cursor: pointer;
+
+        @include breakpoint('md') {
+            display: none;
+        }
+    }
+
+    &__links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70vw;
+        height: 100vh;
+        padding: rem(95) rem(25);
+        background-color: $white;
+        transition: .3s;
+        z-index: 1001;
+
+        @include breakpoint('md') {
+            position: static;
+            left: 0;
+            width: auto;
+            height: auto;
+            padding: unset;
+            transition: unset;
+            z-index: 0;
+        }
+    }
+
+    &__show-menu {
+        left: 0;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+
+        @include breakpoint('md') {
+            display: none;
+        }
+    }
+
+    &__logo {
+
+        @include breakpoint('md') {
+            margin-right: rem(20);
+        }
+
+        @include breakpoint('lg') {
+            margin-right: rem(56);
+        }
+    }
+
+    &__links ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(25);
+
+        @include breakpoint('md') {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: rem(15);
+        }
+
+        @include breakpoint('lg') {
+            gap: rem(34);
+        }
+    }
+
+    &__link {
+        position: relative;
+        font-size: rem(18);
+        color: $very-dark-blue;
+        font-weight: $weight-700;
+        transition: .3s;
+
+        &:hover {
+            color: $dark-grayish-blue;
+        }
+
+        @include breakpoint('md') {
+            font-size: rem(15);
+            color: $dark-grayish-blue;
+            font-weight: $weight-400;
+            transition: unset;
+            transition: color .3s;
+
+            &:hover {
+                color: $very-dark-blue;
+            }
+        }
+    }
+
+    &__link--active {
+        position: relative;
+        z-index: 1;
+            
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: rem(-5);
+            left: 0;
+            width: 100%;
+            height: rem(4);
+            background-color: $orange;
+            cursor: default;
+            z-index: -1;
+            
+            @include breakpoint('md') {
+                bottom: rem(-42);
+            }
+
+            @include breakpoint('lg') {
+                bottom: rem(-50);
+            }
+        }
+    }
+
+    &__cart-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: rem(22);
+
+        @include breakpoint('lg') {
+            gap: rem(46);
+        }  
+    }
+
+    &__cart-icon {
+        cursor: pointer;
+    }
+
+    &__cart-wrapper {
+        position: relative;
+    }
+
+    &__cart-count {
+        position: absolute;
+        top: -8%;
+        right: rem(-10);
+        background-color: $orange;
+        color: $white;
+        font-size: rem(10);
+        font-weight: $weight-700;
+        border-radius: 50%;
+        padding: rem(2) rem(6);
+        line-height: 1;
+    }
+
+    &__avatar-img {
+        width: rem(24);
+        height: rem(24);
+        cursor: pointer;
+
+        &.active {
+            outline: rem(2) solid $orange;
+            border-radius: 50%;
+        }
+
+        @include breakpoint('md') {
+            width: rem(35);
+            height: rem(35);
+        }
+
+        @include breakpoint('lg') {
+            width: rem(50);
+            height: rem(50);
+        }
+    }
+}

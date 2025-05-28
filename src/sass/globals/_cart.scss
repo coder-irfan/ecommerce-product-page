@@ -1,0 +1,103 @@
+.cart {
+    position: absolute;
+    top: rem(75);
+    right: 2%;
+    width: 95vw;
+    max-width: rem(360);
+    overflow: hidden;
+    background-color: $white;
+    border-radius: rem(8);
+    box-shadow: 0 0 rem(10) rgba(0,0,0,0.3);
+    z-index: 999;
+
+    @include breakpoint('lg') {
+        top: rem(95);
+        right: 6%;
+    }
+
+    &__container {
+        padding: rem(20) rem(24);
+        padding-bottom: 0;
+    }
+
+    & h3 {
+        color: $very-dark-blue;
+        font-size: $font-size;
+        padding-bottom: rem(20);
+    }
+
+    &__line {
+        width: 100%;
+        height: rem(2);
+        background-color: $light-grayish-blue;
+        transform: scale(1.13);
+    }
+
+    &__details {
+        padding-inline: rem(20);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: rem(188);
+    }
+}
+
+.list {
+
+    &__body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: rem(15);
+    }
+
+    &__thumbnail img{
+        max-width: 100%;
+        width: rem(50);
+        border-radius: rem(5);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+    }
+
+    &__title-name {
+        font-size: $font-size;
+        color: $dark-grayish-blue;
+        font-weight: $weight-400;
+    }
+
+    &__amounts {
+        color: $dark-grayish-blue;
+
+        & strong {
+            color: $very-dark-blue;
+        }
+    }
+
+    &__delete-icon {
+        cursor: pointer;
+    }
+
+    &__button {
+        margin-top: rem(20);
+        font-family: $font-family;
+        font-weight: $weight-700;
+        font-size: $font-size;
+        width: 100%;  
+        margin-inline: auto;
+        padding: rem(20) rem(15);
+        border: none;
+        border-radius: rem(10);
+        background-color: $orange;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
