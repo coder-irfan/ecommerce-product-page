@@ -4,7 +4,7 @@ This is a responsive and interactive product page built with React. It includes 
 
 ## 🚀 Live Demo
 
-🔗 [View Live](https://Mohammad-Irfan-Noorzada.github.io/ecommerce-product-page)
+🔗 [View Live](https://coder-irfan.github.io/ecommerce-product-page)
 
 ## ✨ Features
 
